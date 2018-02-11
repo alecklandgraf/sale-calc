@@ -36,7 +36,10 @@ class App extends Component {
     const salePrice = parseInt(`${cost - cost * discount / 100}`, 10);
     return (
       <div className="wrapper">
-        <div className="display">${cost} <span className="sale">${salePrice}</span></div>
+        <div className="display">
+          <div>${cost.toLocaleString()}</div>
+          <div className="sale">${salePrice.toLocaleString()}</div>
+        </div>
         <div className="discount" onClick={this.handleDiscountPress}>{discount}%</div>
         <div className="pad seven" onClick={() => this.handleNumberPress(7)}>7</div>
         <div className="pad eight" onClick={() => this.handleNumberPress(8)}>8</div>
